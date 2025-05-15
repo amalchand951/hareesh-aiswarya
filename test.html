@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hareesh & Aiswarya - Wedding Reception</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      flex-direction: row;
+    }
+
+    .left {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .right {
+      flex: 1;
+      padding: 4rem 3rem;
+      background: #fff8f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #4e342e;
+      text-align: center;
+    }
+
+    .right h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #d81b60;
+      margin-bottom: 1rem;
+    }
+
+    .right h2 {
+      font-size: 1.2rem;
+      color: #6d4c41;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .right p {
+      font-size: 1rem;
+      max-width: 400px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .date, .location {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      background: #d81b60;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+
+    a:hover {
+      background: #ad1457;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        flex: unset;
+        height: 50vh;
+        width: 100%;
+      }
+
+      .right {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+  <div class="left">
+    <img src="DSC03654.jpg" alt="Slide 1" class="slide" style="opacity: 1;">
+    <img src="DSC03505.jpg" alt="Slide 2" class="slide" style="opacity: 0;">
+    <img src="DSC03672.jpg" alt="Slide 3" class="slide" style="opacity: 0;">
+  </div>
+
+  <div class="right">
+    <h1>Hareesh & Aiswarya</h1>
+    <h2>You're Invited</h2>
+    <p>
+      Join us as we celebrate the beginning of our forever. We are thrilled to invite you to our wedding reception filled with love, laughter, and joy. Your presence means the world to us!
+    </p>
+    <div class="date">Sunday, November 17, 2025 — 5:00 PM</div>
+    <div class="location">
+      The Gazebo Heritage<br>
+      Thrissur Shoranur Rd, Kulappully<br>
+      Kerala 679122
+    </div>
+    <a href="https://www.google.com/maps?sca_esv=a980cca8ef080035&gs_lp=Egxnd3Mtd2l6LXNlcnAiDWdhemVibyBrdWxhcHAqAggAMgsQLhiABBjHARivATIIEAAYgAQYogQyCBAAGIAEGKIEMgUQABjvBTIIEAAYogQYiQUyGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBSLYYUBVYlQ5wAXgBkAEAmAHDAaABtgmqAQMwLje4AQHIAQD4AQGYAgmgAtcSwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigXCAhIQABiABBixAxhDGIoFGEYY-QHCAgoQABiABBhDGIoFwgINEAAYgAQYsQMYQxiKBcICBRAAGIAEwgIsEAAYgAQYsQMYQxiKBRhGGPkBGJcFGIwFGN0EGEYY-QEY9AMY9QMY9gPYAQHCAgsQABiABBiRAhiKBcICBhAAGBYYHsICCxAAGIAEGIYDGIoFmAMAiAYBkAYKugYGCAEQARgTkgcJMS41LjIuNi0xoAflSbIHCTAuNS4yLjYtMbgHyxI&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KZUOPv5O26c7MTwOnX6ptsID&daddr=Thrissur+-+Shoranur+Rd,+Kulappully,+Kerala+679122" target="_blank">
+      📍 View Map
+    </a>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].style.opacity = 0;
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = 1;
+  }, 5000);
+</script>
+
+</body>
+</html>
